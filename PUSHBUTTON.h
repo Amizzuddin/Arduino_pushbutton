@@ -1,15 +1,13 @@
 #ifndef PUSHBUTTON_H
 #define PUSHBUTTON_H
 
-//#include "Arduino.h"
-//test
-class pushbutton{
+class PUSHBUTTON{
   public:
 	/********************************************************
 	 * Constructor which require to input the connection	*
 	 * of pushbutton on arduino input						*
 	 ********************************************************/
-  	pushbutton(byte pin);
+  	PUSHBUTTON(byte pin);
 
 	/********************************************************
 	 * This function performs pinMode of the pushbutton		*
