@@ -5,11 +5,11 @@ PUSHBUTTON::PUSHBUTTON(byte pin){
    	pb = pin; 
 }
 
-void pushbutton::initialize(){
+void PUSHBUTTON::initialize(){
     pinMode(pb, INPUT);
 }
 
-bool read(){
+bool PUSHBUTTON::read(){
     int reading = digitalRead(pb);
     if (reading != lastButtonState) {
     	lastDebounceTime = millis();
@@ -23,7 +23,7 @@ bool read(){
     return buttonState;
 }
 
-bool toggle(){
+bool PUSHBUTTON::toggle(){
     bool read_input = read();
     if(read_input != last_read_input){
         if(read_input == HIGH){
@@ -34,7 +34,7 @@ bool toggle(){
     return toggle_value;
 }
 
-bool cosd(){
+bool PUSHBUTTON::cosd(){
     bool read_input = read();
     if(read_input != last_read_input){
         last_read_input = read_input;
@@ -46,7 +46,7 @@ bool cosd(){
     }
 }
 
-int clicker(int max_count){
+int PUSHBUTTON::clicker(int max_count){
    	bool read_input = read();
    	if(read_input != last_read_input){
        	if(read_input == HIGH){
